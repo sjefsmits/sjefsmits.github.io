@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sjef Smits Coaching — Rotterdam</title>
+<meta name="description" content="Personal coaching voor drukke ouders in Rotterdam. Training, voeding, supplementen en herstel. Sjef komt naar jou toe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F8F4EE;--warm-white:#FDFBF8;--ink:#1A1714;--ink-light:#4A4540;--ink-muted:#8A837C;--gold:#B8975A;--gold-light:#D4B278;--border:rgba(26,23,20,0.10);--border-strong:rgba(26,23,20,0.18)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--warm-white);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(253,251,248,0.92);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:0.04em;color:var(--ink);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang-toggle{display:flex;align-items:center;background:var(--cream);border:0.5px solid var(--border-strong);border-radius:100px;padding:3px;gap:2px}
+.lang-btn{font-family:'DM Sans',sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.08em;padding:0.25rem 0.65rem;border-radius:100px;border:none;cursor:pointer;background:transparent;color:var(--ink-muted);transition:all .2s}
+.lang-btn.active{background:var(--ink);color:var(--warm-white)}
+.nav-cta{font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--ink);padding-bottom:1px;transition:color .2s,border-color .2s}
+.nav-cta:hover{color:var(--gold);border-color:var(--gold)}
+
+/* HERO — mobile first */
+.hero{padding:5.5rem 1.25rem 3rem;max-width:1100px;margin:0 auto}
+.hero-inner{display:flex;flex-direction:column;gap:2rem}
+.hero-left{opacity:0;animation:fadeUp .9s ease forwards .2s}
+.hero-right{opacity:0;animation:fadeUp .9s ease forwards .4s}
+.hero-eyebrow{font-size:0.68rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem;display:flex;align-items:center;gap:0.65rem}
+.hero-eyebrow::before{content:'';display:inline-block;width:20px;height:0.5px;background:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,9vw,4.2rem);font-weight:300;line-height:1.05;letter-spacing:-0.01em;color:var(--ink);margin-bottom:1.25rem}
+h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:0.95rem;color:var(--ink-light);line-height:1.75;margin-bottom:2rem}
+.hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-primary{display:inline-block;padding:0.8rem 1.6rem;background:var(--ink);color:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;transition:background .2s}
+.btn-primary:hover{background:var(--gold)}
+.btn-ghost{display:inline-block;padding:0.8rem 1.6rem;font-size:0.78rem;font-weight:400;color:var(--ink-muted);text-decoration:none;letter-spacing:0.04em;border:0.5px solid var(--border-strong);transition:color .2s,border-color .2s}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
+.hero-photo-wrap{position:relative;width:180px}
+.hero-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block}
+.hero-photo-wrap::before{content:'';position:absolute;top:-6px;left:-6px;right:6px;bottom:6px;border:0.5px solid var(--border-strong);pointer-events:none;z-index:-1}
+
+/* SECTIONS */
+section{position:relative;z-index:1}
+.section-inner{max-width:1100px;margin:0 auto;padding:3.5rem 1.25rem}
+.section-divider{max-width:1100px;margin:0 auto;padding:0 1.25rem;border-top:0.5px solid var(--border)}
+.section-label{font-size:0.65rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem;display:flex;align-items:center;gap:0.65rem}
+.section-label::before{content:'';display:inline-block;width:16px;height:0.5px;background:var(--gold)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.75rem,6vw,3rem);font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:0.85rem}
+h2 em{font-style:italic;color:var(--gold)}
+
+/* WHY */
+.why-items{display:flex;flex-direction:column;margin-top:1.5rem}
+.why-intro{font-size:0.95rem;color:var(--ink-light);line-height:1.8;margin-bottom:1.5rem}
+.why-item{padding:1.1rem 0;border-bottom:0.5px solid var(--border);display:grid;grid-template-columns:1.75rem 1fr;gap:0.85rem;align-items:start}
+.why-item:first-child{border-top:0.5px solid var(--border)}
+.why-n{font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--gold);font-weight:300;padding-top:2px}
+.why-item h3{font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.why-item p{font-size:0.8rem;color:var(--ink-muted);line-height:1.6}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:0;margin-top:1.5rem}
+.step{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.1rem 0;border-bottom:0.5px solid var(--border);align-items:start}
+.step:first-child{border-top:0.5px solid var(--border)}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--gold);line-height:1;padding-top:2px}
+.step h3{font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.step p{font-size:0.8rem;color:var(--ink-muted);line-height:1.6}
+
+/* PACKAGES */
+.packages-section{background:var(--cream)}
+.packages-intro{font-size:0.88rem;color:var(--ink-light);line-height:1.75;margin-bottom:2rem}
+.packages-grid{display:flex;flex-direction:column;gap:1rem}
+.package{background:var(--warm-white);border:0.5px solid var(--border-strong);padding:1.5rem}
+.package.featured{background:var(--ink);border-color:var(--ink)}
+.package.featured .pkg-name,.package.featured .pkg-title,.package.featured .pkg-price,.package.featured .pkg-per,.package.featured .pkg-feature{color:var(--warm-white)}
+.package.featured .pkg-desc,.package.featured .pkg-sessions-note{color:rgba(253,251,248,0.55)}
+.package.featured .pkg-divider{background:rgba(253,251,248,0.12)}
+.package.featured .pkg-feature::before{background:var(--gold-light)}
+.package.featured .pkg-note{color:var(--gold-light)}
+.pkg-tag{display:inline-block;font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;background:var(--gold);color:var(--warm-white);padding:0.2rem 0.6rem;margin-bottom:1rem}
+.pkg-name{font-size:0.65rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.2rem}
+.pkg-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--ink);margin-bottom:.4rem}
+.pkg-desc{font-size:0.78rem;color:var(--ink-muted);line-height:1.6;margin-bottom:1rem}
+.pkg-price-row{display:flex;align-items:baseline;gap:.2rem;margin-bottom:.15rem}
+.pkg-price{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--ink);line-height:1}
+.pkg-per{font-size:0.75rem;color:var(--ink-muted)}
+.pkg-note{font-size:0.7rem;color:var(--gold);font-style:italic;margin-bottom:.15rem}
+.pkg-sessions-note{font-size:0.7rem;color:var(--ink-muted);margin-bottom:1.25rem;line-height:1.5}
+.pkg-divider{height:0.5px;background:var(--border);margin:1rem 0}
+.pkg-features{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem}
+.pkg-feature{font-size:0.78rem;color:var(--ink-light);padding-left:1rem;position:relative;line-height:1.45}
+.pkg-feature::before{content:'';position:absolute;left:0;top:.42rem;width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.pkg-btn{display:block;text-align:center;padding:.75rem;font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all .2s;border:0.5px solid var(--ink);color:var(--ink);background:transparent}
+.pkg-btn:active{background:var(--ink);color:var(--warm-white)}
+.package.featured .pkg-btn{border-color:var(--gold);color:var(--gold)}
+.package.featured .pkg-btn:active{background:var(--gold);color:var(--ink)}
+
+/* WEEK SECTION */
+.week-section{background:var(--warm-white)}
+.week-grid{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.week-day{border:0.5px solid var(--border-strong);padding:1.1rem 1.25rem;background:var(--cream)}
+.week-day.inperson{border-color:var(--gold);background:var(--warm-white)}
+.week-day-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem}
+.week-day-num{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-muted)}
+.week-day-type{font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase}
+.tag-inperson{color:var(--gold)}
+.tag-remote{color:var(--ink-muted)}
+.week-day h3{font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:.25rem}
+.week-day p{font-size:0.78rem;color:var(--ink-muted);line-height:1.55}
+.week-note{font-size:0.82rem;color:var(--ink-light);margin-top:1.25rem;line-height:1.7;padding:1rem 1.1rem;border-left:2px solid var(--gold);background:var(--cream)}
+.week-note strong{color:var(--ink);font-weight:500}
+
+/* LOCAL */
+.local-section{background:var(--cream)}
+.local-points{display:flex;flex-direction:column;gap:.65rem;margin-top:1.25rem}
+.local-point{display:flex;align-items:center;gap:.65rem;font-size:0.85rem;color:var(--ink-light)}
+.local-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.local-map-wrap{margin-top:1.5rem;border:0.5px solid var(--border-strong);overflow:hidden}
+.local-map-wrap svg{display:block;width:100%}
+
+/* ABOUT */
+.about-section{background:var(--warm-white)}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:2rem}
+.about-photo{width:100%;object-fit:cover;display:block}
+.about-photo.pro{aspect-ratio:2/3;margin-top:1.5rem}
+.about-photo.rugby{aspect-ratio:3/4;object-position:center top}
+.about-text p{font-size:0.9rem;color:var(--ink-light);line-height:1.8;margin-bottom:1rem}
+.about-text p strong{color:var(--ink);font-weight:500}
+.about-credentials{display:flex;flex-direction:column;gap:0;margin-top:1.25rem}
+.cred{display:flex;align-items:flex-start;gap:.75rem;padding:.85rem 0;border-top:0.5px solid var(--border)}
+.cred:last-child{border-bottom:0.5px solid var(--border)}
+.cred-icon{width:26px;height:26px;background:var(--cream);border:0.5px solid var(--border-strong);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.cred-icon svg{width:12px;height:12px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.cred-title{font-size:0.8rem;font-weight:500;color:var(--ink);margin-bottom:.1rem}
+.cred-sub{font-size:0.72rem;color:var(--ink-muted);line-height:1.5}
+
+/* CTA */
+.cta-section{background:var(--cream);text-align:center}
+.cta-inner{padding:3.5rem 1.25rem}
+.cta-inner h2{margin-bottom:.85rem}
+.cta-inner p{font-size:0.9rem;color:var(--ink-light);line-height:1.75;margin-bottom:2rem;max-width:480px;margin-left:auto;margin-right:auto}
+.contact-details{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;align-items:center}
+.contact-item{display:flex;flex-direction:column;align-items:center;gap:.25rem}
+.contact-label{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.contact-val{font-size:0.88rem;color:var(--ink);text-decoration:none;border-bottom:0.5px solid var(--border-strong);padding-bottom:1px}
+
+footer{border-top:0.5px solid var(--border);padding:1.5rem 1.25rem;display:flex;flex-direction:column;align-items:center;gap:.5rem;max-width:1100px;margin:0 auto;text-align:center}
+footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* DESKTOP OVERRIDES */
+@media(min-width:768px){
+  nav{padding:1.25rem 2.5rem}
+  .hero{padding:8rem 2.5rem 5rem}
+  .hero-inner{flex-direction:row;align-items:center;gap:5rem}
+  .hero-left{flex:1.1}
+  .hero-right{flex:0 0 auto;display:flex;justify-content:center}
+  .hero-photo-wrap{width:260px}
+  .section-inner{padding:5rem 2.5rem}
+  .section-divider{padding:0 2.5rem}
+  .why-items{display:grid;grid-template-columns:1fr 1fr;gap:0 3rem}
+  .why-intro{grid-column:1/-1}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .step{display:block;padding:0 1.5rem 0 0;border-bottom:none;border-right:0.5px solid var(--border)}
+  .step:first-child{border-top:none;padding-left:0}
+  .step:last-child{border-right:none}
+  .step-num{font-size:2rem;margin-bottom:.85rem}
+  .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .week-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .local-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  .local-map-wrap{margin-top:0}
+  .about-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+  .about-photos{margin-bottom:0}
+  .contact-details{flex-direction:row;justify-content:center;gap:3rem}
+  footer{flex-direction:row;justify-content:space-between;padding:2rem 2.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">Sjef Smits<span>.</span></a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('nl')" id="btn-nl">NL</button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+    <a class="nav-cta" href="https://calendly.com/sjefjms/30min" target="_blank" id="nav-cta-text">Gratis kennismaking</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Personal coaching · Rotterdam</div>
+        <h1 id="h1-text">Met jou<br>binnen <em>én</em><br>buiten de<br>sportschool</h1>
+        <p class="hero-desc" id="hero-desc">Voor drukke Rotterdamse ouders die eindelijk serieus aan hun gezondheid willen werken. Training, voeding, supplementen en herstel — ik regel het allemaal. En ik kom naar jou toe.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://calendly.com/sjefjms/30min" target="_blank" id="hero-btn1">Gratis kennismaking</a>
+          <a class="btn-ghost" href="#packages" id="hero-btn2">Pakketten</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-photo-wrap">
+          <img class="hero-photo" src="pro.jpg" alt="Sjef Smits">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WHY -->
+<section>
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" id="why-label">Waarom Sjef</div>
+      <h2 id="why-h2">Je hebt geen motivatiecoach nodig. Je hebt een <em>systeem</em> nodig.</h2>
+    </div>
+    <div class="why-items">
+      <p class="why-intro reveal" id="why-intro">De meeste mensen in de veertig zijn niet lui. Ze zijn druk. Met werk, kinderen en alles wat daartussen zit. Ik pak het complete plaatje aan — training, voeding, supplementen, slaap en herstel. En ik kom naar jou toe.</p>
+      <div class="why-item reveal"><span class="why-n">I</span><div><h3 id="wi1t">Ik kom naar jou toe</h3><p id="wi1d">Geen reistijd, geen excuus. Bij jou thuis, in een gym of een locatie die voor jou werkt.</p></div></div>
+      <div class="why-item reveal"><span class="why-n">II</span><div><h3 id="wi2t">Het hele plaatje</h3><p id="wi2d">Training is 20% van het resultaat. Voeding, supplementen, slaap en herstel bepalen de rest. Ik begeleid alles.</p></div></div>
+      <div class="why-item reveal"><span class="why-n">III</span><div><h3 id="wi3t">Altijd een plan</h3><p id="wi3d">Op reis, met vakantie, drukke week — ik maak altijd een schema dat past bij jouw situatie van die week.</p></div></div>
+      <div class="why-item reveal"><span class="why-n">IV</span><div><h3 id="wi4t">Data-gestuurd</h3><p id="wi4d">Wekelijkse voortgangsrapportage. Je ziet altijd precies waarom een aanpassing wordt gemaakt.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:var(--cream)">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" id="how-label">Hoe het werkt</div>
+      <h2 id="how-h2">Van kennismaking naar <em>resultaat</em></h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num">01</div><div><h3 id="s1t">Gratis kennismaking</h3><p id="s1d">We spreken 20 minuten. Jij vertelt over je situatie. Ik vertel eerlijk of en hoe ik kan helpen. Geen verplichtingen.</p></div></div>
+      <div class="step reveal"><div class="step-num">02</div><div><h3 id="s2t">Persoonlijk plan</h3><p id="s2d">Op basis van jouw doelen, agenda en lichaam stel ik een compleet weekschema op — inclusief remote trainingsdagen en reisschema's.</p></div></div>
+      <div class="step reveal"><div class="step-num">03</div><div><h3 id="s3t">We gaan aan de slag</h3><p id="s3d">Ik kom naar jou toe voor de in-person sessies en begeleid je via WhatsApp en dashboard op de andere dagen.</p></div></div>
+      <div class="step reveal"><div class="step-num">04</div><div><h3 id="s4t">Wekelijks bijsturen</h3><p id="s4d">Elke week kijk ik naar je data en stuur ik bij. Het plan past zich aan jouw leven aan — niet andersom.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" id="pkg-label">Pakketten</div>
+      <h2 id="pkg-h2">Transparant geprijsd. <em>Geen verrassingen.</em></h2>
+      <p class="packages-intro" id="pkg-intro">Elk pakket is gebaseerd op 2 in-person sessies per week plus remote trainingsschema's — zodat je 4 dagen per week gestructureerd beweegt. Sessies vinden plaats bij jou thuis, in een gym bij jou in de buurt, of op een locatie die voor jou werkt.</p>
+    </div>
+    <div class="packages-grid">
+      <div class="package reveal">
+        <div class="pkg-name" id="pk1-name">Instap</div>
+        <div class="pkg-title" id="pk1-title">De Start</div>
+        <div class="pkg-desc" id="pk1-desc">2 in-person sessies per week plus 2 remote trainingsschema's. Een complete week, zonder dat je elke dag hoeft af te spreken.</div>
+        <div class="pkg-price-row"><span class="pkg-price">€520</span><span class="pkg-per" id="per1">/ maand</span></div>
+        <div class="pkg-note" id="pk1-note">~€65 per sessie · 8 in-person sessies/maand</div>
+        <div class="pkg-sessions-note" id="pk1-sess">2× in-person + 2× remote per week · Maandelijks opzegbaar</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-feature" id="pk1f1">8 in-person sessies per maand</li>
+          <li class="pkg-feature" id="pk1f2">2 remote trainingsschema's per week</li>
+          <li class="pkg-feature" id="pk1f3">Reis- &amp; vakantieschema's inbegrepen</li>
+          <li class="pkg-feature" id="pk1f4">Voedingsraamwerk &amp; maaltijdstructuur</li>
+          <li class="pkg-feature" id="pk1f5">Supplement basisgids</li>
+          <li class="pkg-feature" id="pk1f6">Wekelijkse WhatsApp check-in</li>
+          <li class="pkg-feature" id="pk1f7">Maandelijks voortgangsrapport</li>
+        </ul>
+        <a class="pkg-btn" href="https://calendly.com/sjefjms/30min" target="_blank" id="pk1-btn">Kennismaking plannen</a>
+      </div>
+      <div class="package featured reveal">
+        <div class="pkg-tag" id="pk2-tag">Aanbevolen</div>
+        <div class="pkg-name" id="pk2-name">Compleet</div>
+        <div class="pkg-title" id="pk2-title">Het Volledige Plaatje</div>
+        <div class="pkg-desc" id="pk2-desc">3 in-person sessies plus remote begeleiding — met het complete leefstijlprogramma. Hier begint de echte verandering.</div>
+        <div class="pkg-price-row"><span class="pkg-price">€840</span><span class="pkg-per" id="per2">/ maand</span></div>
+        <div class="pkg-note" id="pk2-note">~€70 per sessie · 12 in-person sessies/maand</div>
+        <div class="pkg-sessions-note" id="pk2-sess">3× in-person + 1× remote per week · 3 maanden min.</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-feature" id="pk2f1">12 in-person sessies per maand</li>
+          <li class="pkg-feature" id="pk2f2">Remote schema's voor vrije &amp; reisdagen</li>
+          <li class="pkg-feature" id="pk2f3">Progressief trainingsplan op maat</li>
+          <li class="pkg-feature" id="pk2f4">Persoonlijk maaltijdplan (gezinsvriendelijk)</li>
+          <li class="pkg-feature" id="pk2f5">Supplement stack op maat</li>
+          <li class="pkg-feature" id="pk2f6">Slaap- &amp; herstelprotocol</li>
+          <li class="pkg-feature" id="pk2f7">Tweewekelijks voortgangsgesprek (30 min)</li>
+          <li class="pkg-feature" id="pk2f8">WhatsApp toegang (reactie binnen 48u)</li>
+          <li class="pkg-feature" id="pk2f9">Maandelijks data-rapport</li>
+        </ul>
+        <a class="pkg-btn" href="https://calendly.com/sjefjms/30min" target="_blank" id="pk2-btn">Kennismaking plannen</a>
+      </div>
+      <div class="package reveal">
+        <div class="pkg-name" id="pk3-name">Premium</div>
+        <div class="pkg-title" id="pk3-title">De Conciërge</div>
+        <div class="pkg-desc" id="pk3-desc">4 in-person sessies per week aan huis, plus volledige leefstijlondersteuning. Volledig ontzorgd.</div>
+        <div class="pkg-price-row"><span class="pkg-price">€1.200</span><span class="pkg-per" id="per3">/ maand</span></div>
+        <div class="pkg-note" id="pk3-note">~€75 per sessie · 16 in-person sessies/maand</div>
+        <div class="pkg-sessions-note" id="pk3-sess">4× in-person aan huis · 6 maanden min.</div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-features">
+          <li class="pkg-feature" id="pk3f1">16 in-person sessies aan huis per maand</li>
+          <li class="pkg-feature" id="pk3f2">Sjef komt bij jou thuis (Kralingen, Hillegersberg, Centrum)</li>
+          <li class="pkg-feature" id="pk3f3">Reis- &amp; vakantieschema's inbegrepen</li>
+          <li class="pkg-feature" id="pk3f4">Volledige voedings- &amp; maaltijdbegeleiding</li>
+          <li class="pkg-feature" id="pk3f5">Persoonlijk supplementenprotocol</li>
+          <li class="pkg-feature" id="pk3f6">Volledig herstel- &amp; slaapoptimalisatie</li>
+          <li class="pkg-feature" id="pk3f7">Wekelijks strategiegesprek (1-op-1)</li>
+          <li class="pkg-feature" id="pk3f8">Zelfde-dag WhatsApp toegang</li>
+          <li class="pkg-feature" id="pk3f9">Kwartaal lichaamsanalyse &amp; rapport</li>
+        </ul>
+        <a class="pkg-btn" href="https://calendly.com/sjefjms/30min" target="_blank" id="pk3-btn">Kennismaking plannen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEK SECTION -->
+<section class="week-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label" id="week-label">Een week met Sjef</div>
+      <h2 id="week-h2">Vier trainingsdagen. Twee met mij. <em>Twee op eigen kracht.</em></h2>
+    </div>
+    <div class="week-grid reveal">
+      <div class="week-day inperson">
+        <div class="week-day-header"><span class="week-day-num" id="d1n">Dag 1</span><span class="week-day-type tag-inperson" id="d1type">In-person</span></div>
+        <h3 id="d1t">Kracht &amp; structuur</h3>
+        <p id="d1d">Ik kom naar jou toe. We trainen samen, ik corrigeer de techniek en zet de week op gang.</p>
+      </div>
+      <div class="week-day">
+        <div class="week-day-header"><span class="week-day-num" id="d2n">Dag 2</span><span class="week-day-type tag-remote" id="d2type">Remote plan</span></div>
+        <h3 id="d2t">Zelfstandige training</h3>
+        <p id="d2d">Een op maat gemaakt schema dat je zelf uitvoert. Alles uitgelegd, niks aan het toeval overgelaten.</p>
+      </div>
+      <div class="week-day inperson">
+        <div class="week-day-header"><span class="week-day-num" id="d3n">Dag 3</span><span class="week-day-type tag-inperson" id="d3type">In-person</span></div>
+        <h3 id="d3t">Progressie &amp; aanpassing</h3>
+        <p id="d3d">We evalueren hoe dag 2 ging, sturen bij en bouwen voort op de week.</p>
+      </div>
+      <div class="week-day">
+        <div class="week-day-header"><span class="week-day-num" id="d4n">Dag 4</span><span class="week-day-type tag-remote" id="d4type">Remote plan</span></div>
+        <h3 id="d4t">Zelfstandige training</h3>
+        <p id="d4d">Het tweede zelfstandige schema. Afgestemd op hoe je lichaam zich voelt na de eerdere sessies.</p>
+      </div>
+    </div>
+    <div class="week-note reveal" id="week-note"><strong>Op reis of met vakantie?</strong> Geen probleem. Ik maak speciale schema's voor hotel gyms, kleine ruimtes of dagen zonder equipment — zodat je nooit een week verliest.</div>
+  </div>
+</section>
+
+<!-- LOCAL -->
+<section class="local-section">
+  <div class="section-inner">
+    <div class="local-layout">
+      <div class="reveal">
+        <div class="section-label">Rotterdam</div>
+        <h2 id="local-h2">Lokaal. Betrouwbaar. <em>Bij jou.</em></h2>
+        <p id="local-p1" style="font-size:0.9rem;color:var(--ink-light);line-height:1.8;margin-bottom:.85rem">Ik woon en werk in Rotterdam. Geen anonieme online coach — maar iemand die je kent, die je buurt kent, en die elke week op je stoep staat.</p>
+        <p id="local-p2" style="font-size:0.9rem;color:var(--ink-light);line-height:1.8;margin-bottom:.85rem">Ik train in <strong>Kralingen, Hillegersberg, Centrum</strong> en omgeving. Heb je een thuis-sportruimte? Dan kom ik erheen.</p>
+        <div class="local-points">
+          <div class="local-point"><span class="local-dot"></span>Kralingen / Kralingse Bos</div>
+          <div class="local-point"><span class="local-dot"></span>Hillegersberg</div>
+          <div class="local-point"><span class="local-dot"></span>Rotterdam Centrum &amp; Waterfront</div>
+          <div class="local-point"><span class="local-dot"></span><span id="local-p4">Omliggende wijken op aanvraag</span></div>
+        </div>
+      </div>
+      <div class="local-map-wrap reveal">
+        <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="260" fill="#F0EBE3"/>
+          <path d="M0 145 Q80 130 160 140 Q240 150 320 135 Q360 128 400 133" stroke="#C8BFB5" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <line x1="200" y1="0" x2="200" y2="260" stroke="#E0D8CF" stroke-width="1.5"/>
+          <line x1="0" y1="108" x2="400" y2="108" stroke="#E0D8CF" stroke-width="1.5"/>
+          <line x1="120" y1="0" x2="120" y2="260" stroke="#E8E2DB" stroke-width="1"/>
+          <line x1="280" y1="0" x2="280" y2="260" stroke="#E8E2DB" stroke-width="1"/>
+          <text x="200" y="152" text-anchor="middle" font-size="8" fill="#A89D94" font-family="DM Sans,sans-serif" letter-spacing="2">NIEUWE MAAS</text>
+          <circle cx="270" cy="62" r="7" fill="#B8975A"/>
+          <text x="282" y="66" font-size="9" fill="#4A4540" font-family="DM Sans,sans-serif">Hillegersberg</text>
+          <circle cx="310" cy="90" r="7" fill="#B8975A"/>
+          <text x="322" y="94" font-size="9" fill="#4A4540" font-family="DM Sans,sans-serif">Kralingen</text>
+          <circle cx="185" cy="103" r="7" fill="#1A1714"/>
+          <text x="197" y="107" font-size="9" fill="#4A4540" font-family="DM Sans,sans-serif">Centrum</text>
+          <text x="28" y="26" font-size="10" fill="#A89D94" font-family="DM Sans,sans-serif">N</text>
+          <line x1="32" y1="28" x2="32" y2="16" stroke="#A89D94" stroke-width="0.75"/>
+          <polygon points="32,12 29,20 35,20" fill="#A89D94"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-inner">
+    <div class="about-layout">
+      <div class="about-photos reveal">
+        <div><img class="about-photo pro" src="pro.jpg" alt="Sjef Smits"></div>
+        <div><img class="about-photo rugby" src="rugby.jpg" alt="Sjef in actie"></div>
+      </div>
+      <div class="about-text reveal">
+        <div class="section-label" id="about-label">Over Sjef</div>
+        <h2 id="about-h2">Coach. Atleet. <em>Rotterdammer.</em></h2>
+        <p id="about-p1">Ik ben Sjef Smits — 20 jaar, student Economie aan de Erasmus Universiteit Rotterdam en personal coach. Ik geloof dat een gezond lichaam geen luxe is, maar de basis van alles. Werk, gezin, energie — het begint allemaal bij hoe je je voelt.</p>
+        <p id="about-p2">Mijn aanpak komt niet uit een boek. Het komt uit jaren topsport, een achtergrond in finance en een oprechte passie voor het helpen van mensen. Ik begrijp hoe druk het leven kan zijn — en ik weet hoe je er toch het maximale uit haalt.</p>
+        <div class="about-credentials">
+          <div class="cred"><div class="cred-icon"><svg viewBox="0 0 13 13"><path d="M6.5 1L8 5h4l-3.5 2.5L10 12 6.5 9.5 3 12l1.5-4.5L1 5h4z"/></svg></div><div><div class="cred-title" id="c1t">Internationaal rugby</div><div class="cred-sub" id="c1d">Aanvoerder op nationaal niveau (VS) · EIRA USA Selects · #11 nationale ranking</div></div></div>
+          <div class="cred"><div class="cred-icon"><svg viewBox="0 0 13 13"><rect x="1.5" y="3" width="10" height="7.5" rx="1"/><path d="M4.5 3V2M8.5 3V2M1.5 6h10"/></svg></div><div><div class="cred-title" id="c2t">Erasmus Universiteit Rotterdam</div><div class="cred-sub" id="c2d">Bachelor Internationale Economie &amp; Bedrijfskunde · Afstuderen 2027</div></div></div>
+          <div class="cred"><div class="cred-icon"><svg viewBox="0 0 13 13"><path d="M2 11 Q6.5 2 11 11"/><path d="M3.5 8h6"/></svg></div><div><div class="cred-title" id="c3t">Hybride atleet</div><div class="cred-sub" id="c3d">Hardloper, gym, rugby · Doel: Ironman triathlon finishen</div></div></div>
+          <div class="cred"><div class="cred-icon"><svg viewBox="0 0 13 13"><circle cx="6.5" cy="5" r="2.5"/><path d="M2 12c0-2.5 2-4 4.5-4s4.5 1.5 4.5 4"/></svg></div><div><div class="cred-title" id="c4t">M&amp;A advisory stage</div><div class="cred-sub" id="c4d">ING Capital Markets &amp; Advisory, New York · Data-gedreven aanpak</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="reveal">
+      <div class="section-label" style="justify-content:center" id="cta-label">Gratis kennismaking</div>
+      <h2 id="cta-h2">Klaar om te beginnen?</h2>
+      <p id="cta-p">Bel of stuur een bericht. We plannen een korte kennismaking — 20 minuten, geen verplichtingen. Ik vertel je eerlijk of ik de juiste coach voor je ben.</p>
+      <a class="btn-primary" href="https://calendly.com/sjefjms/30min" target="_blank" id="cta-btn" style="display:inline-block">Plan een gratis kennismaking</a>
+      <div class="contact-details">
+        <div class="contact-item"><span class="contact-label" id="ct1">Telefoon</span><a class="contact-val" href="tel:+31647211638">+31 6 47 21 16 38</a></div>
+        <div class="contact-item"><span class="contact-label" id="ct2">E-mail</span><a class="contact-val" href="/cdn-cgi/l/email-protection#a4d7cec1c2cec9d7e4c3c9c5cdc88ac7cbc9"><span class="__cf_email__" data-cfemail="d5a6bfb0b3bfb8a695b2b8b4bcb9fbb6bab8">[email&#160;protected]</span></a></div>
+        <div class="contact-item"><span class="contact-label" id="ct3">Locatie</span><span class="contact-val" style="border-color:transparent">Rotterdam</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Sjef Smits Coaching · Rotterdam</p>
+  <a href="/cdn-cgi/l/email-protection#f281989794989f81b2959f939b9edc919d9f"><span class="__cf_email__" data-cfemail="2f5c454a4945425c6f48424e4643014c4042">[email&#160;protected]</span></a>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const copy={
+  nl:{'nav-cta-text':'Gratis kennismaking','h1-text':'Met jou<br>binnen <em>én</em><br>buiten de<br>sportschool','hero-desc':'Voor drukke Rotterdamse ouders die eindelijk serieus aan hun gezondheid willen werken. Training, voeding, supplementen en herstel — ik regel het allemaal. En ik kom naar jou toe.','hero-btn1':'Gratis kennismaking','hero-btn2':'Pakketten','why-label':'Waarom Sjef','why-h2':'Je hebt geen motivatiecoach nodig. Je hebt een <em>systeem</em> nodig.','why-intro':'De meeste mensen in de veertig zijn niet lui. Ze zijn druk. Met werk, kinderen en alles wat daartussen zit. Ik pak het complete plaatje aan — training, voeding, supplementen, slaap en herstel. En ik kom naar jou toe.','wi1t':'Ik kom naar jou toe','wi1d':'Geen reistijd, geen excuus. Bij jou thuis, in een gym of een locatie die voor jou werkt.','wi2t':'Het hele plaatje','wi2d':'Training is 20% van het resultaat. Voeding, supplementen, slaap en herstel bepalen de rest.','wi3t':'Altijd een plan','wi3d':'Op reis, vakantie of drukke week — ik maak altijd een schema dat past bij jouw situatie.','wi4t':'Data-gestuurd','wi4d':'Wekelijkse voortgangsrapportage. Je ziet altijd precies waarom een aanpassing wordt gemaakt.','how-label':'Hoe het werkt','how-h2':'Van kennismaking naar <em>resultaat</em>','s1t':'Gratis kennismaking','s1d':'We spreken 20 minuten. Jij vertelt over je situatie. Ik vertel eerlijk of en hoe ik kan helpen.','s2t':'Persoonlijk plan','s2d':'Op basis van jouw doelen, agenda en lichaam stel ik een compleet weekschema op — inclusief remote dagen en reisschema\'s.','s3t':'We gaan aan de slag','s3d':'Ik kom naar jou toe voor de in-person sessies en begeleid je via WhatsApp op de andere dagen.','s4t':'Wekelijks bijsturen','s4d':'Het plan past zich aan jouw leven aan — niet andersom.','pkg-label':'Pakketten','pkg-h2':'Transparant geprijsd. <em>Geen verrassingen.</em>','pkg-intro':'Elk pakket is gebaseerd op 2 in-person sessies per week plus remote trainingsschema\'s — zodat je 4 dagen per week gestructureerd beweegt. Sessies bij jou thuis, in een gym, of een locatie die voor jou werkt.','pk1-name':'Instap','pk1-title':'De Start','pk1-desc':'2 in-person sessies per week plus 2 remote schema\'s. Een complete week zonder dat je elke dag hoeft af te spreken.','per1':'/ maand','pk1-note':'~€65 per sessie · 8 sessies/maand','pk1-sess':'2× in-person + 2× remote · Maandelijks opzegbaar','pk1f1':'8 in-person sessies per maand','pk1f2':'2 remote trainingsschema\'s per week','pk1f3':'Reis- & vakantieschema\'s inbegrepen','pk1f4':'Voedingsraamwerk & maaltijdstructuur','pk1f5':'Supplement basisgids','pk1f6':'Wekelijkse WhatsApp check-in','pk1f7':'Maandelijks voortgangsrapport','pk1-btn':'Kennismaking plannen','pk2-tag':'Aanbevolen','pk2-name':'Compleet','pk2-title':'Het Volledige Plaatje','pk2-desc':'3 in-person sessies plus remote begeleiding met het complete leefstijlprogramma.','per2':'/ maand','pk2-note':'~€70 per sessie · 12 sessies/maand','pk2-sess':'3× in-person + 1× remote · 3 maanden min.','pk2f1':'12 in-person sessies per maand','pk2f2':'Remote schema\'s voor vrije & reisdagen','pk2f3':'Progressief trainingsplan op maat','pk2f4':'Persoonlijk maaltijdplan (gezinsvriendelijk)','pk2f5':'Supplement stack op maat','pk2f6':'Slaap- & herstelprotocol','pk2f7':'Tweewekelijks voortgangsgesprek','pk2f8':'WhatsApp toegang (48u reactie)','pk2f9':'Maandelijks data-rapport','pk2-btn':'Kennismaking plannen','pk3-name':'Premium','pk3-title':'De Conciërge','pk3-desc':'4 in-person sessies per week aan huis plus volledige leefstijlondersteuning.','per3':'/ maand','pk3-note':'~€75 per sessie · 16 sessies/maand','pk3-sess':'4× in-person aan huis · 6 maanden min.','pk3f1':'16 in-person sessies aan huis/maand','pk3f2':'Sjef komt bij jou thuis (Kralingen, Hillegersberg, Centrum)','pk3f3':'Reis- & vakantieschema\'s inbegrepen','pk3f4':'Volledige voedings- & maaltijdbegeleiding','pk3f5':'Persoonlijk supplementenprotocol','pk3f6':'Volledig herstel- & slaapoptimalisatie','pk3f7':'Wekelijks strategiegesprek','pk3f8':'Zelfde-dag WhatsApp toegang','pk3f9':'Kwartaal lichaamsanalyse & rapport','pk3-btn':'Kennismaking plannen','week-label':'Een week met Sjef','week-h2':'Vier trainingsdagen. Twee met mij. <em>Twee op eigen kracht.</em>','d1n':'Dag 1','d1type':'In-person','d1t':'Kracht & structuur','d1d':'Ik kom naar jou toe. We trainen samen en ik zet de week op gang.','d2n':'Dag 2','d2type':'Remote plan','d2t':'Zelfstandige training','d2d':'Een op maat schema dat je zelf uitvoert. Alles uitgelegd, niks aan het toeval.','d3n':'Dag 3','d3type':'In-person','d3t':'Progressie & aanpassing','d3d':'We evalueren dag 2, sturen bij en bouwen voort op de week.','d4n':'Dag 4','d4type':'Remote plan','d4t':'Zelfstandige training','d4d':'Tweede zelfstandige sessie, afgestemd op hoe je lichaam zich voelt.','week-note':'<strong>Op reis of met vakantie?</strong> Geen probleem. Ik maak speciale schema\'s voor hotel gyms, kleine ruimtes of dagen zonder equipment.','local-h2':'Lokaal. Betrouwbaar. <em>Bij jou.</em>','local-p1':'Ik woon en werk in Rotterdam. Geen anonieme online coach — maar iemand die je kent en elke week op je stoep staat.','local-p2':'Ik train in <strong>Kralingen, Hillegersberg, Centrum</strong> en omgeving.','local-p4':'Omliggende wijken op aanvraag','about-label':'Over Sjef','about-h2':'Coach. Atleet. <em>Rotterdammer.</em>','about-p1':'Ik ben Sjef Smits — 20 jaar, student Economie aan de Erasmus Universiteit Rotterdam en personal coach. Een gezond lichaam is de basis van alles.','about-p2':'Mijn aanpak komt uit jaren topsport, een achtergrond in finance en een oprechte passie voor het helpen van mensen.','c1t':'Internationaal rugby','c1d':'Aanvoerder op nationaal niveau (VS) · EIRA USA Selects · #11 nationale ranking','c2t':'Erasmus Universiteit Rotterdam','c2d':'Bachelor Internationale Economie & Bedrijfskunde · Afstuderen 2027','c3t':'Hybride atleet','c3d':'Hardloper, gym, rugby · Doel: Ironman triathlon finishen','c4t':'M&A advisory stage','c4d':'ING Capital Markets & Advisory, New York · Data-gedreven aanpak','cta-label':'Gratis kennismaking','cta-h2':'Klaar om te beginnen?','cta-p':'Bel of stuur een bericht. We plannen een korte kennismaking — 20 minuten, geen verplichtingen.','cta-btn':'Plan een gratis kennismaking','ct1':'Telefoon','ct2':'E-mail','ct3':'Locatie'},
+  en:{'nav-cta-text':'Free consultation','h1-text':'With you<br>inside <em>&amp;</em><br>outside<br>the gym','hero-desc':'For busy Rotterdam parents who are finally ready to take their health seriously. Training, nutrition, supplements and recovery — I handle all of it. And I come to you.','hero-btn1':'Free consultation','hero-btn2':'Packages','why-label':'Why Sjef','why-h2':'You don\'t need a motivation coach. You need a <em>system</em>.','why-intro':'Most people in their forties aren\'t unfit because they don\'t care. They\'re busy. I address the full picture — training, nutrition, supplements, sleep and recovery. And I come to you.','wi1t':'I come to you','wi1d':'No travel time, no excuses. At your home, at a gym, or wherever works for you.','wi2t':'The whole picture','wi2d':'Training is 20% of the result. Nutrition, supplements, sleep and recovery determine the rest.','wi3t':'Always a plan','wi3d':'Travelling, on holiday, busy week — I always build a programme that fits your situation.','wi4t':'Data-driven','wi4d':'Weekly progress reports. You always know exactly why an adjustment is being made.','how-label':'How it works','how-h2':'From first call to <em>results</em>','s1t':'Free consultation','s1d':'We talk for 20 minutes. You tell me your situation. I tell you honestly if and how I can help.','s2t':'Personal plan','s2d':'Based on your goals, schedule and body I build a complete weekly programme including remote days and travel plans.','s3t':'We get to work','s3d':'I come to you for in-person sessions and guide you via WhatsApp on the other days.','s4t':'Weekly adjustments','s4d':'The plan adapts to your life — not the other way around.','pkg-label':'Packages','pkg-h2':'Transparently priced. <em>No surprises.</em>','pkg-intro':'Every package is built around 2 in-person sessions per week plus remote training plans — so you move with structure 4 days a week. Sessions at your home, a gym near you, or wherever works.','pk1-name':'Entry','pk1-title':'The Start','pk1-desc':'2 in-person sessions per week plus 2 remote plans. A complete week without needing to meet every day.','per1':'/ month','pk1-note':'~€65 per session · 8 sessions/month','pk1-sess':'2× in-person + 2× remote · Cancel anytime','pk1f1':'8 in-person sessions per month','pk1f2':'2 remote training plans per week','pk1f3':'Travel & holiday programmes included','pk1f4':'Nutrition framework & meal structure','pk1f5':'Starter supplement guide','pk1f6':'Weekly WhatsApp check-in','pk1f7':'Monthly progress report','pk1-btn':'Book a consultation','pk2-tag':'Recommended','pk2-name':'Complete','pk2-title':'The Full Picture','pk2-desc':'3 in-person sessions plus remote coaching with the complete lifestyle programme.','per2':'/ month','pk2-note':'~€70 per session · 12 sessions/month','pk2-sess':'3× in-person + 1× remote · 3 month min.','pk2f1':'12 in-person sessions per month','pk2f2':'Remote plans for rest & travel days','pk2f3':'Progressive custom training plan','pk2f4':'Personal meal plan (family-friendly)','pk2f5':'Custom supplement stack','pk2f6':'Sleep & recovery protocol','pk2f7':'Bi-weekly progress call','pk2f8':'WhatsApp access (48h response)','pk2f9':'Monthly data report','pk2-btn':'Book a consultation','pk3-name':'Premium','pk3-title':'The Concierge','pk3-desc':'4 in-person home sessions per week plus full lifestyle support. Completely taken care of.','per3':'/ month','pk3-note':'~€75 per session · 16 sessions/month','pk3-sess':'4× in-person at home · 6 month min.','pk3f1':'16 in-person home sessions/month','pk3f2':'Sjef comes to your home (Kralingen, Hillegersberg, Centrum)','pk3f3':'Travel & holiday programmes included','pk3f4':'Full nutrition & meal guidance','pk3f5':'Personal supplement protocol','pk3f6':'Full recovery & sleep optimisation','pk3f7':'Weekly strategy call','pk3f8':'Same-day WhatsApp access','pk3f9':'Quarterly body analysis & report','pk3-btn':'Book a consultation','week-label':'A week with Sjef','week-h2':'Four training days. Two with me. <em>Two on your own.</em>','d1n':'Day 1','d1type':'In-person','d1t':'Strength & structure','d1d':'I come to you. We train together and I set the week in motion.','d2n':'Day 2','d2type':'Remote plan','d2t':'Independent training','d2d':'A custom plan you execute yourself. Everything explained, nothing left to chance.','d3n':'Day 3','d3type':'In-person','d3t':'Progress & adjustment','d3d':'We review day 2, adjust and build on the week.','d4n':'Day 4','d4type':'Remote plan','d4t':'Independent training','d4d':'Second independent session, tailored to how your body feels.','week-note':'<strong>Travelling or on holiday?</strong> No problem. I build special programmes for hotel gyms, small spaces or equipment-free days.','local-h2':'Local. Reliable. <em>With you.</em>','local-p1':'I live and work in Rotterdam. Not an anonymous online coach — someone who knows you and shows up every week.','local-p2':'I train in <strong>Kralingen, Hillegersberg, Centrum</strong> and surrounding areas.','local-p4':'Surrounding areas on request','about-label':'About Sjef','about-h2':'Coach. Athlete. <em>Rotterdammer.</em>','about-p1':'I\'m Sjef Smits — 20 years old, Economics student at Erasmus University Rotterdam and personal coach. A healthy body is the foundation of everything.','about-p2':'My approach comes from years of elite sport, a background in finance, and a genuine passion for helping people.','c1t':'International rugby','c1d':'National-level captain (USA) · EIRA USA Selects · #11 national ranking','c2t':'Erasmus University Rotterdam','c2d':'BSc International Economics & Business Economics · Graduating 2027','c3t':'Hybrid athlete','c3d':'Runner, gym, rugby · Goal: complete an Ironman triathlon','c4t':'M&A advisory internship','c4d':'ING Capital Markets & Advisory, New York · Data-driven in everything','cta-label':'Free consultation','cta-h2':'Ready to start?','cta-p':'Call or send a message. We\'ll plan a short consultation — 20 minutes, no commitment.','cta-btn':'Book a free consultation','ct1':'Phone','ct2':'Email','ct3':'Location'}
+};
+
+function setLang(l){
+  document.getElementById('btn-nl').classList.toggle('active',l==='nl');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.querySelector('html').lang=l;
+  const t=copy[l];
+  Object.keys(t).forEach(id=>{const el=document.getElementById(id);if(el)el
