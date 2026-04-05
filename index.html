@@ -151,7 +151,8 @@ footer{border-top:0.5px solid var(--border);padding:1.5rem 1.25rem;display:flex;
 footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.reveal{opacity:1;transform:translateY(0);transition:opacity .65s ease,transform .65s ease}
+.reveal.animate{opacity:0;transform:translateY(16px)}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* DESKTOP OVERRIDES */
