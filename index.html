@@ -194,6 +194,21 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 @media(min-width:768px){
   .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 }
+
+/* WHATSAPP FLOATING BUTTON */
+.wa-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,0.5)}
+.wa-btn svg{width:30px;height:30px;fill:white}
+.wa-tooltip{position:fixed;bottom:5rem;right:1.5rem;z-index:199;background:var(--ink);color:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:0.72rem;padding:.5rem .85rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;border-left:2px solid #25D366}
+.wa-btn:hover + .wa-tooltip, .wa-tooltip:hover{opacity:1}
+
+/* ROTTERDAM TRUST STRIP */
+.trust-strip{background:var(--cream);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:.85rem 2.5rem}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-muted)}
+.trust-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@media(max-width:768px){.trust-strip{padding:.85rem 1.25rem}.trust-inner{gap:1.25rem}.wa-btn{bottom:1rem;right:1rem}}
+
 </style>
 </head>
 <body>
@@ -392,8 +407,8 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
       </div>
       <div class="local-map-wrap reveal">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78080.01580437857!2d4.415006!3d51.924419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b7605f54c47d%3A0x6113ede79f0b98b1!2sRotterdam!5e0!3m2!1snl!2snl!4v1680000000000!5m2!1snl!2snl"
-          width="100%" height="320" style="border:0.5px solid var(--border-strong);display:block;filter:grayscale(30%)" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          src="https://www.openstreetmap.org/export/embed.html?bbox=4.3800%2C51.8900%2C4.5400%2C51.9600&layer=mapnik&marker=51.9244%2C4.4777"
+          width="100%" height="320" style="border:0.5px solid var(--border-strong);display:block;filter:grayscale(20%) sepia(10%)" allowfullscreen="" loading="lazy">
         </iframe>
       </div>
     </div>
@@ -465,19 +480,21 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
       <a class="btn-primary" href="https://calendly.com/sjefjms/30min" target="_blank" id="cta-btn" style="display:inline-block">Plan een gratis kennismaking</a>
       <div class="contact-details">
         <div class="contact-item"><span class="contact-label" id="ct1">Telefoon</span><a class="contact-val" href="tel:+31647211638">+31 6 47 21 16 38</a></div>
-        <div class="contact-item"><span class="contact-label" id="ct2">E-mail <span style="background:var(--gold);color:var(--warm-white);font-size:0.55rem;padding:.15rem .45rem;letter-spacing:.08em;vertical-align:middle;margin-left:.3rem" id="pref-badge">Voorkeur</span></span><span class="contact-val" style="cursor:text;user-select:all" onclick="window.location='mai'+'lto:sjefjms'+'@gmail.com'">sjefjms&#64;gmail&#46;com</span></div>
+        <div class="contact-item"><span class="contact-label" id="ct2">E-mail <span style="background:var(--gold);color:var(--warm-white);font-size:0.55rem;padding:.15rem .45rem;letter-spacing:.08em;vertical-align:middle;margin-left:.3rem" id="pref-badge">Voorkeur</span></span><span class="contact-val" style="cursor:text;user-select:all" onclick="window.location='mai'+'lto:sjefsmitscoaching@outlook.com'"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f2ebe4e7f2ece8f5f2e2eee0e2e9e8efe6c1eef4f5edeeeeeaafe2eeec">[email&#160;protected]</a></span></div>
         <div class="contact-item"><span class="contact-label" id="ct3">Locatie</span><span class="contact-val" style="border-color:transparent">Rotterdam</span></div>
+        <div class="contact-item"><span class="contact-label" id="ct4">WhatsApp</span><a class="contact-val" href="https://wa.me/31647211638?text=Hallo%20Sjef%2C%20ik%20ben%20ge%C3%AFnteresseerd%20in%20jouw%20coaching." target="_blank" style="color:var(--gold)">App mij direct</a></div>
+        <div class="contact-item"><span class="contact-label" id="ct5">Website</span><a class="contact-val" href="https://sjefsmitscoaching.nl" target="_blank">sjefsmitscoaching.nl</a></div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Sjef Smits Coaching · Rotterdam</p>
-  <span style="cursor:pointer;font-size:0.72rem;color:var(--ink-muted)" onclick="this.innerHTML=atob('c2plZmptc0BnbWFpbC5jb20=');this.href='mailto:'+atob('c2plZmptc0BnbWFpbC5jb20=')">Klik om email te tonen</span>
+  <p>© 2025 Sjef Smits Coaching · Rotterdam · <a href="https://sjefsmitscoaching.nl" style="color:var(--ink-muted);text-decoration:none">sjefsmitscoaching.nl</a></p>
+  <span style="cursor:pointer;font-size:0.72rem;color:var(--ink-muted)" onclick="window.location='mai'+'lto:sjefsmitscoaching@outlook.com'"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95e6fff0f3e6f8fce1e6f6faf4f6fdfcfbf2d5fae0e1f9fafafebbf6faf8">[email&#160;protected]</a></span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const copy={
   nl:{
     'nav-cta-text':'Gratis kennismaking',
@@ -555,7 +572,7 @@ const copy={
     'cta-h2':'Klaar om te beginnen?',
     'cta-p':'Bel of stuur een bericht. We plannen een korte kennismaking van 20 minuten zonder verplichtingen.',
     'cta-btn':'Plan een gratis kennismaking',
-    'ct1':'Telefoon','ct2':'E-mail','ct3':'Locatie','pref-badge':'Voorkeur'
+    'ct1':'Telefoon','ct2':'E-mail','ct3':'Locatie','ct4':'WhatsApp','ct5':'Website','pref-badge':'Voorkeur'
   },
   en:{
     'nav-cta-text':'Free consultation',
@@ -633,7 +650,7 @@ const copy={
     'cta-h2':'Ready to start?',
     'cta-p':'Call or send a message. We will plan a short consultation of 20 minutes with no commitment.',
     'cta-btn':'Book a free consultation',
-    'ct1':'Phone','ct2':'Email','ct3':'Location','pref-badge':'Preferred'
+    'ct1':'Phone','ct2':'Email','ct3':'Location','ct4':'WhatsApp','ct5':'Website','pref-badge':'Preferred'
   }
 };
 
@@ -643,6 +660,8 @@ function setLang(l){
   document.querySelector('html').lang=l;
   const t=copy[l];
   Object.keys(t).forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=t[id];});
+  const tip=document.getElementById('wa-tip');
+  if(tip)tip.innerHTML=l==='nl'?'App Sjef op WhatsApp':'WhatsApp Sjef';
 }
 
 const reveals=document.querySelectorAll('.reveal');
@@ -844,7 +863,25 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 @media(min-width:768px){
   .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 }
+
+/* WHATSAPP FLOATING BUTTON */
+.wa-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);text-decoration:none;transition:transform .2s,box-shadow .2s}
+.wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,0.5)}
+.wa-btn svg{width:30px;height:30px;fill:white}
+.wa-tooltip{position:fixed;bottom:5rem;right:1.5rem;z-index:199;background:var(--ink);color:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:0.72rem;padding:.5rem .85rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;border-left:2px solid #25D366}
+.wa-btn:hover + .wa-tooltip, .wa-tooltip:hover{opacity:1}
+
+/* ROTTERDAM TRUST STRIP */
+.trust-strip{background:var(--cream);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:.85rem 2.5rem}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.trust-item{display:flex;align-items:center;gap:.5rem;font-size:0.72rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-muted)}
+.trust-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+@media(max-width:768px){.trust-strip{padding:.85rem 1.25rem}.trust-inner{gap:1.25rem}.wa-btn{bottom:1rem;right:1rem}}
+
 </style>
 </head>
-</body>
-</html>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a class="wa-btn" href="https://wa.me/31647211638?text=Hallo%20Sjef%2C%20ik%20ben%20ge%C3%AFnteresseerd%20in%20jouw%20coaching%20en%20wil%20graag%20meer%20weten." target="_blank" aria-label="WhatsApp Sjef">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825
