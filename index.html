@@ -198,7 +198,7 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 /* WHATSAPP FLOATING BUTTON */
 .wa-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);text-decoration:none;transition:transform .2s,box-shadow .2s}
 .wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,0.5)}
-.wa-btn svg{width:30px;height:30px;fill:white}
+.wa-btn svg{width:26px;height:26px;fill:white}
 .wa-tooltip{position:fixed;bottom:5rem;right:1.5rem;z-index:199;background:var(--ink);color:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:0.72rem;padding:.5rem .85rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;border-left:2px solid #25D366}
 .wa-btn:hover + .wa-tooltip, .wa-tooltip:hover{opacity:1}
 
@@ -278,7 +278,9 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
       <div class="step reveal"><div class="step-num">03</div><div><h3 id="s3t">We gaan aan de slag</h3><p id="s3d">Ik kom naar jou toe voor de in-person sessies en begeleid je via WhatsApp en dashboard op de andere dagen.</p></div></div>
       <div class="step reveal"><div class="step-num">04</div><div><h3 id="s4t">Wekelijks bijsturen</h3><p id="s4d">Elke week kijk ik naar je data en stuur ik bij. Het plan past zich aan jouw leven aan — niet andersom.</p></div></div>
     </div>
-  </div>
+  
+<div class="week-note reveal" id="week-note" style="background:var(--cream);border-left:2px solid var(--gold);padding:.85rem 1.1rem;font-size:0.9rem;color:var(--ink-light);line-height:1.7;margin-top:1.5rem"><strong>Op reis of met vakantie?</strong> Geen probleem. Ik maak speciale schema's voor hotel gyms, kleine ruimtes of dagen zonder equipment — zodat je nooit een week verliest.</div>
+</div>
 </section>
 
 <!-- PACKAGES -->
@@ -359,38 +361,7 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
   </div>
 </section>
 
-<!-- WEEK SECTION -->
-<section class="week-section">
-  <div class="section-inner">
-    <div class="reveal">
-      <div class="section-label" id="week-label">Een week met Sjef</div>
-      <h2 id="week-h2">Vier trainingsdagen. Twee met mij. <em>Twee op eigen kracht.</em></h2>
-    </div>
-    <div class="week-grid reveal">
-      <div class="week-day inperson">
-        <div class="week-day-header"><span class="week-day-num" id="d1n">Dag 1</span><span class="week-day-type tag-inperson" id="d1type">In-person</span></div>
-        <h3 id="d1t">Kracht &amp; structuur</h3>
-        <p id="d1d">Ik kom naar jou toe. We trainen samen, ik corrigeer de techniek en zet de week op gang.</p>
-      </div>
-      <div class="week-day">
-        <div class="week-day-header"><span class="week-day-num" id="d2n">Dag 2</span><span class="week-day-type tag-remote" id="d2type">Remote plan</span></div>
-        <h3 id="d2t">Zelfstandige training</h3>
-        <p id="d2d">Een op maat gemaakt schema dat je zelf uitvoert. Alles uitgelegd, niks aan het toeval overgelaten.</p>
-      </div>
-      <div class="week-day inperson">
-        <div class="week-day-header"><span class="week-day-num" id="d3n">Dag 3</span><span class="week-day-type tag-inperson" id="d3type">In-person</span></div>
-        <h3 id="d3t">Progressie &amp; aanpassing</h3>
-        <p id="d3d">We evalueren hoe dag 2 ging, sturen bij en bouwen voort op de week.</p>
-      </div>
-      <div class="week-day">
-        <div class="week-day-header"><span class="week-day-num" id="d4n">Dag 4</span><span class="week-day-type tag-remote" id="d4type">Remote plan</span></div>
-        <h3 id="d4t">Zelfstandige training</h3>
-        <p id="d4d">Het tweede zelfstandige schema. Afgestemd op hoe je lichaam zich voelt na de eerdere sessies.</p>
-      </div>
-    </div>
-    <div class="week-note reveal" id="week-note"><strong>Op reis of met vakantie?</strong> Geen probleem. Ik maak speciale schema's voor hotel gyms, kleine ruimtes of dagen zonder equipment — zodat je nooit een week verliest.</div>
-  </div>
-</section>
+
 
 <!-- LOCAL -->
 <section class="local-section">
@@ -485,7 +456,7 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
       <a class="btn-primary" href="https://calendly.com/sjefjms/30min" target="_blank" id="cta-btn" style="display:inline-block">Plan een gratis kennismaking</a>
       <div class="contact-details">
         <div class="contact-item"><span class="contact-label" id="ct1">Telefoon</span><a class="contact-val" href="tel:+31647211638">+31 6 47 21 16 38</a></div>
-        <div class="contact-item"><span class="contact-label" id="ct2">E-mail <span style="background:var(--gold);color:var(--warm-white);font-size:0.55rem;padding:.15rem .45rem;letter-spacing:.08em;vertical-align:middle;margin-left:.3rem" id="pref-badge">Voorkeur</span></span><span class="contact-val" style="cursor:text;user-select:all" onclick="window.location='mai'+'lto:sjefsmitscoaching@outlook.com'"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="81f2ebe4e7f2ece8f5f2e2eee0e2e9e8efe6c1eef4f5edeeeeeaafe2eeec">[email&#160;protected]</a></span></div>
+        <div class="contact-item"><span class="contact-label" id="ct2">E-mail <span style="background:var(--gold);color:var(--warm-white);font-size:0.55rem;padding:.15rem .45rem;letter-spacing:.08em;vertical-align:middle;margin-left:.3rem" id="pref-badge">Voorkeur</span></span><span style="font-size:0.72rem;color:var(--ink-muted)">sjefsmitscoaching@outlook.com</span></div>
         <div class="contact-item"><span class="contact-label" id="ct3">Locatie</span><span class="contact-val" style="border-color:transparent">Rotterdam</span></div>
         <div class="contact-item"><span class="contact-label" id="ct4">WhatsApp</span><a class="contact-val" href="https://wa.me/31647211638?text=Hallo%20Sjef%2C%20ik%20ben%20ge%C3%AFnteresseerd%20in%20jouw%20coaching." target="_blank" style="color:var(--gold)">App mij direct</a></div>
         <div class="contact-item"><span class="contact-label" id="ct5">Website</span><a class="contact-val" href="https://sjefsmitscoaching.nl" target="_blank">sjefsmitscoaching.nl</a></div>
@@ -496,10 +467,10 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 
 <footer>
   <p>© 2025 Sjef Smits Coaching · Rotterdam · <a href="https://sjefsmitscoaching.nl" style="color:var(--ink-muted);text-decoration:none">sjefsmitscoaching.nl</a></p>
-  <span style="cursor:pointer;font-size:0.72rem;color:var(--ink-muted)" onclick="window.location='mai'+'lto:sjefsmitscoaching@outlook.com'"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95e6fff0f3e6f8fce1e6f6faf4f6fdfcfbf2d5fae0e1f9fafafebbf6faf8">[email&#160;protected]</a></span>
+  <span style="font-size:0.72rem;color:var(--ink-muted)">sjefsmitscoaching@outlook.com</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const copy={
   nl:{
     'nav-cta-text':'Gratis kennismaking',
@@ -872,7 +843,7 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 /* WHATSAPP FLOATING BUTTON */
 .wa-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);text-decoration:none;transition:transform .2s,box-shadow .2s}
 .wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,0.5)}
-.wa-btn svg{width:30px;height:30px;fill:white}
+.wa-btn svg{width:26px;height:26px;fill:white}
 .wa-tooltip{position:fixed;bottom:5rem;right:1.5rem;z-index:199;background:var(--ink);color:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:0.72rem;padding:.5rem .85rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;border-left:2px solid #25D366}
 .wa-btn:hover + .wa-tooltip, .wa-tooltip:hover{opacity:1}
 
@@ -1088,7 +1059,7 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 /* WHATSAPP FLOATING BUTTON */
 .wa-btn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);text-decoration:none;transition:transform .2s,box-shadow .2s}
 .wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,0.5)}
-.wa-btn svg{width:30px;height:30px;fill:white}
+.wa-btn svg{width:26px;height:26px;fill:white}
 .wa-tooltip{position:fixed;bottom:5rem;right:1.5rem;z-index:199;background:var(--ink);color:var(--warm-white);font-family:'DM Sans',sans-serif;font-size:0.72rem;padding:.5rem .85rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;border-left:2px solid #25D366}
 .wa-btn:hover + .wa-tooltip, .wa-tooltip:hover{opacity:1}
 
