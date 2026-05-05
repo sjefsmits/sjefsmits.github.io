@@ -209,6 +209,11 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
 .trust-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
 @media(max-width:768px){.trust-strip{padding:.85rem 1.25rem}.trust-inner{gap:1.25rem}.wa-btn{bottom:1rem;right:1rem}}
 
+/* ONLINE NOTE */
+.online-note{background:var(--cream);border:0.5px solid var(--border-strong);border-left:3px solid var(--gold);padding:1.25rem 1.5rem;margin-top:2rem}
+.online-note h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:var(--ink);margin-bottom:.5rem}
+.online-note p{font-size:0.85rem;color:var(--ink-light);line-height:1.75;margin-bottom:.85rem}
+.online-note a{font-size:0.78rem;font-weight:500;color:var(--gold);text-decoration:none;border-bottom:0.5px solid var(--gold);padding-bottom:1px}
 </style>
 </head>
 <body>
@@ -358,6 +363,12 @@ footer p,footer a{font-size:0.72rem;color:var(--ink-muted);text-decoration:none}
       </div>
     </div>
   </div>
+
+    <div class="online-note reveal" id="online-note-wrap">
+      <h3 id="online-title">Vaak op reis of liever online?</h3>
+      <p id="online-text">Ik bied ook volledig online coaching aan via PT Distinction — persoonlijke trainingsschema's, voedingsbegeleiding en wekelijkse check-ins, waar je ook bent. Ideaal voor drukke professionals die veel reizen of liever op afstand begeleid worden.</p>
+      <a href="https://wa.me/31647211638?text=Hallo%20Sjef%2C%20ik%20heb%20interesse%20in%20online%20coaching." target="_blank" id="online-cta">Neem contact op voor meer informatie →</a>
+    </div>
 </section>
 
 
@@ -515,7 +526,7 @@ const copy={
     'pk3f3':'Reis en vakantieschemas inbegrepen','pk3f4':'Volledige voedings en maaltijdbegeleiding',
     'pk3f5':'Persoonlijk supplementenprotocol','pk3f6':'Volledig herstel en slaapoptimalisatie',
     'pk3f7':'Wekelijks strategiegesprek','pk3f8':'Zelfde dag WhatsApp toegang',
-    'pk3f9':'Kwartaal lichaamsanalyse en rapport','pk3-btn':'Kennismaking plannen',
+    'pk3f9':'Kwartaal lichaamsanalyse en rapport','pk3-btn':'Kennismaking plannen','online-title':'Vaak op reis of liever online?','online-text':'Ik bied ook volledig online coaching aan via PT Distinction — persoonlijke trainingsschema\'s, voedingsbegeleiding en wekelijkse check-ins, waar je ook bent. Ideaal voor drukke professionals die veel reizen of liever op afstand begeleid worden.','online-cta':'Neem contact op voor meer informatie →',
     'week-label':'Een week met Sjef',
     'week-h2':'Vier trainingsdagen. Twee met mij. <em>Twee op eigen kracht.</em>',
     'd1n':'Dag 1','d1type':'In-person','d1t':'Kracht en structuur','d1d':'Ik kom naar jou toe. We trainen samen en ik zet de week op gang.',
@@ -593,7 +604,7 @@ const copy={
     'pk3f3':'Travel and holiday programmes included','pk3f4':'Full nutrition and meal guidance',
     'pk3f5':'Personal supplement protocol','pk3f6':'Full recovery and sleep optimisation',
     'pk3f7':'Weekly strategy call','pk3f8':'Same day WhatsApp access',
-    'pk3f9':'Quarterly body analysis and report','pk3-btn':'Book a consultation',
+    'pk3f9':'Quarterly body analysis and report','pk3-btn':'Book a consultation','online-title':'Travel a lot or prefer online?','online-text':'I also offer fully online coaching via PT Distinction — personalised training programmes, nutrition guidance and weekly check-ins, wherever you are. Ideal for busy professionals who travel frequently or prefer remote coaching.','online-cta':'Get in touch for more information →',
     'week-label':'A week with Sjef',
     'week-h2':'Four training days. Two with me. <em>Two on your own.</em>',
     'd1n':'Day 1','d1type':'In-person','d1t':'Strength and structure','d1d':'I come to you. We train together and I set the week in motion.',
